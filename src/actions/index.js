@@ -1,4 +1,4 @@
-export const getCategories = (category) => ({
+export const getCategories = (categories) => ({
   type: 'GET_CATEGORIES',
-  category,
+  categories,
 });
