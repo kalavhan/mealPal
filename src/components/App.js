@@ -23,14 +23,10 @@ const App = () =>{
   },[dispatch]);
 
   if (view === 'Categories'){
-    console.log(categories.length);
     if (categories.length > 0) {
       return (
         <>
-          <CategoriesBox categories={categories}/>
-          <button type="button" onClick={() => dispatch(setView('CategoryDetails'))}>
-              Toggle
-          </button>
+          <CategoriesBox categories={categories} clickButton={() => dispatch(setView('CategoryDetails'))} />
         </>
       );
     }
@@ -39,10 +35,7 @@ const App = () =>{
   if (view === 'CategoryDetails') {
     return (
       <>
-          <CategoryDetails /> 
-          <button type="button" onClick={() => dispatch(setView('Categories'))}>
-              Toggle
-          </button>
+          <CategoryDetails clickButton={() => dispatch(setView('Categories'))}/> 
       </>
     );
   } 
