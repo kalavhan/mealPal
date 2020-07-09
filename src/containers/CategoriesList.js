@@ -1,7 +1,6 @@
 import React from 'react';
-import CategoryDetails from './CategoryDetails';
 
-const Categories = ({ categories }) => {
+const CategoriesBox = ({ categories }) => {
   console.log(categories);
   return (
     <div>
@@ -10,4 +9,4 @@ const Categories = ({ categories }) => {
   )
 }
 
-export default Categories;
+export default CategoriesBox;

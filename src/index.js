@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import App from './components/App';
 import rootReducer from './reducers';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, {categories: []});
 
 ReactDOM.render(
   <Provider store={store}>

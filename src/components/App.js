@@ -1,76 +1,51 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import Categories from '../containers/Categories';
+import React, {useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux'
+import CategoriesBox from '../containers/CategoriesList';
 import CategoryDetails from '../containers/CategoryDetails';
+import { getCategories, setView } from '../actions/index';
 import Loader from '../components/loader';
-import { getCategories } from '../actions/index';
 
-const mapStateToProps = (state) => ({
-  categories: state.categories,
-});
+const App = () =>{
+  const categories = useSelector(state => state.categories);
+  const view = useSelector(state => state.view);
+  const dispatch = useDispatch()
 
-const mapDispatchToProps = dispatch => ({
-  getCategories: categories => {
-    dispatch(getCategories(categories));
-  }
-});
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      categories: props.categories,
-      isLoading: true,
-      toggle: true,
-    };
-    this.handleGetData = this.handleGetData.bind(this);
-  }
-  handleGetData(categoriesData) {
-    const { getCategories } = this.props.categories;
-    // getCategories(categoriesData);
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     try {
       fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
       .then(response => response.json())
       .then(data => {
-        this.setState({isLoading: false})
-        this.handleGetData(data.categories);
+        dispatch(getCategories(data.categories))
       });
     } catch (e) {
       console.log(e);
     }
-  }
-  toggleChecked(e) {
-    this.setState({ toggle: !e})
-  }
+  },[dispatch]);
 
-  render() {
-    const { categories, toggle, isLoading} = this.state;
-    console.log(categories);
-      if (toggle){
-        if (!isLoading){
-          return (
-            <>
-              <Categories categories={categories}/>
-              <button type="button" onClick={() => this.toggleChecked(toggle)}>
-                  Toggle
-              </button>
-            </>
-          );
-        }
-        return <Loader />
-      }
+  if (view === 'Categories'){
+    console.log(categories.length);
+    if (categories.length > 0) {
       return (
         <>
-            <CategoryDetails /> 
-            <button type="button" onClick={() => this.toggleChecked(toggle)}>
-                Toggle
-            </button>
+          <CategoriesBox categories={categories}/>
+          <button type="button" onClick={() => dispatch(setView('CategoryDetails'))}>
+              Toggle
+          </button>
         </>
       );
+    }
+    return <Loader />
   }
+  if (view === 'CategoryDetails') {
+    return (
+      <>
+          <CategoryDetails /> 
+          <button type="button" onClick={() => dispatch(setView('Categories'))}>
+              Toggle
+          </button>
+      </>
+    );
+  } 
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
