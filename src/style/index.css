@@ -1,0 +1,37 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+#container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.categoriesList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.categoriesList > .categoriesCard {
+  width: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  color: #fff;
+  display: flex;
+  background-color: #ffc046;
+  cursor: pointer;
+}
+
+.categoriesList > .categoriesCard > h1 {
+  position: absolute;
+  z-index: 3;
+}
+
+.categoriesList > .categoriesCard > h1:hover {
+  z-index: 1;
+}

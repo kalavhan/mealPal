@@ -1,44 +1,22 @@
-import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux'
-import CategoriesBox from '../containers/CategoriesList';
-import CategoryDetails from '../containers/CategoryDetails';
-import { getCategories, setView } from '../actions/index';
-import Loader from '../components/loader';
+import React from 'react';
+import {Provider} from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import CategoriesList from '../containers/CategoriesList';
+import CategoryMeals from '../containers/CategoryMeals';
 
-const App = () =>{
-  const categories = useSelector(state => state.categories);
-  const view = useSelector(state => state.view);
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    try {
-      fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
-      .then(response => response.json())
-      .then(data => {
-        dispatch(getCategories(data.categories))
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  },[dispatch]);
-
-  if (view === 'Categories'){
-    if (categories.length > 0) {
-      return (
-        <>
-          <CategoriesBox categories={categories} clickButton={() => dispatch(setView('CategoryDetails'))} />
-        </>
-      );
-    }
-    return <Loader />
-  }
-  if (view === 'CategoryDetails') {
-    return (
-      <>
-          <CategoryDetails clickButton={() => dispatch(setView('Categories'))}/> 
-      </>
-    );
-  } 
+const App = ({store}) =>{
+  return (
+    <Provider store={store} >
+      <Router>
+        <Route exact path='/'>
+          <CategoriesList />
+        </Route>
+        <Route expect path='/category-meals/:categoryId'>
+          <CategoryMeals />
+        </Route>
+      </Router>
+    </Provider> 
+  )
 };
 
 export default App;

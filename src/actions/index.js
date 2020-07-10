@@ -3,7 +3,9 @@ export const getCategories = (categories) => ({
   categories,
 });
 
-export const setView = (view) => ({
-  type: 'SET_VIEW',
-  view,
-})
+export const setCategoryMeals = (meals) => {
+  console.log(meals);
+  return ({
+  type: 'SET_CATEGORY_MEALS',
+  meals,
+})}

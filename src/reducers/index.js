@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import categoriesReducer from './categories';
-import viewsReducer from './views';
+import categoryMealsReducer from './categoryMeals';
 
 const rootReducer = combineReducers({
   categories: categoriesReducer,
-  view: viewsReducer,
+  meals: categoryMealsReducer,
 });
 
 export default rootReducer;
