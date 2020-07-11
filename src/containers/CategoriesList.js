@@ -15,6 +15,7 @@ const CategoriesList = () => {
       .then(data => {
         data.categories.splice(-2,2);
         dispatch(getCategories(data.categories));
+        localStorage.setItem('categories', JSON.stringify(data.categories));
       });
     } catch (e) {
       throw(e);

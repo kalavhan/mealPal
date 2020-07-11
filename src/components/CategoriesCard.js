@@ -1,11 +1,10 @@
 import React from 'react';
-import { useHistory } from 'react-router'
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router';
 
 const CategoriesCard = ({ category, clickFunction }) => {
   const history = useHistory();
-  const changeView = id => (
-    history.push(`/category-meals/${id}`)
+  const changeView = categoryName => (
+    history.push(`/category-meals/${categoryName}`)
   );
 
   return (

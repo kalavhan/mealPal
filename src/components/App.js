@@ -11,8 +11,11 @@ const App = ({store}) =>{
         <Route exact path='/'>
           <CategoriesList />
         </Route>
-        <Route expect path='/category-meals/:categoryId'>
+        <Route expect path='/category-meals/:categoryName'>
           <CategoryMeals />
+        </Route>
+        <Route expect path='/meal-details/:mealId'>
+
         </Route>
       </Router>
     </Provider> 
