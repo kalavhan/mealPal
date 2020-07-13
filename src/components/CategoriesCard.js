@@ -8,8 +8,11 @@ const CategoriesCard = ({ category, clickFunction }) => {
   );
 
   return (
-    <div className="categoriesCard" style={{ backgroundImage: `URL(${category.strCategoryThumb})`}} onClick={() => changeView(category.strCategory)}>
+    <div className="categoriesCard" onClick={() => changeView(category.strCategory)}>
       <h1>{category.strCategory}</h1>
+      <div className="categoriesCardImg">
+        <img src={category.strCategoryThumb} alt={`How to make ${category.strCategory} based meals`}/>
+      </div>
     </div>
   )
 };

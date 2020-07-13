@@ -1,12 +1,14 @@
 body {
   padding: 0;
-  margin: 0;
+  background-color: rgb(228, 228, 228);
 }
+
 #container {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background-color: #fff;
-  margin: 0;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
 }
 
@@ -18,13 +20,43 @@ body {
 }
 
 .categoriesList > .categoriesCard {
-  width: calc(25% - 10px);
-  margin: 5px;
+  flex-basis: 225px;
+  flex-shrink: 1;
+  flex-grow: 1;
+  height: 225px;
+  margin: 15px;
   position: relative;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   display: flex;
-  background-color: #ffc046;
   cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.categoriesList > .categoriesCard > h1{
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.categoriesCard > .categoriesCardImg {
+  background-color: #ff8f00;
+  position: absolute;
+  top: 45px;
+  right: calc(50% - 78px);
+  height: 156px;
+  width: 156px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.categoriesCard > .categoriesCardImg > img {
+  width: 100%;
+  height: auto;
 }
 
 .categoriesList > .categoriesCard > h1 {
@@ -34,4 +66,28 @@ body {
 
 .categoriesList > .categoriesCard > h1:hover {
   z-index: 1;
+}
+
+.categoryMeals {
+  display: flex;
+  flex-direction: row;
+}
+
+.mealDetails {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.mealDetails > h4 {
+  color: rgb(54, 54, 54);
+}
+
+.mealsList {
+  flex: 2;
 }

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import Loader from '../components/loader';
 import MealsCard from '../components/MealsCard';
+import cookingSvg from '../images/cooking.svg';
 
 const CategoryMeals = (props) => {
   const {categoryName} = useParams();
@@ -31,12 +32,12 @@ const CategoryMeals = (props) => {
 
   return (
     <div className="categoryMeals">
-      <div>
-        <h1>{selectedCategory.strCategory}</h1>
-        <img src={selectedCategory.strCategoryThumb} alt="imageOfTheMeal" />
-        <p>{selectedCategory.strCategoryDescription}</p>
+      <div className="mealDetails">
+        <h2>Let's cook something delicious!</h2>
+        <h4>Select a meal to get the recepie and start cooking</h4>
+        <img src={cookingSvg} alt="let's cook a meal"/>
       </div>
-      <div class="mealsList">
+      <div className="mealsList">
         {meals.map(meal => <MealsCard meal={meal}/>)}
       </div>
     </div>
