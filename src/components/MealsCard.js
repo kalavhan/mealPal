@@ -7,10 +7,9 @@ const MealsCard = ({meal}) => {
     history.push(`/meal-details/${id}`)
     )
   return (
-    <div onClick={() => changeView(meal.idMeal)}>
+    <div className="mealCard" onClick={() => changeView(meal.idMeal)}>
       <img src={meal.strMealThumb} alt="mealImage" />
-      <h2>{meal.strMeal}</h2>
-      <h1>➜</h1>
+      <h3>{meal.strMeal}</h3>
     </div>
   )
 }
