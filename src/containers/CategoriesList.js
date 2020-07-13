@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { getCategories } from '../actions/index';
 import Loader from '../components/loader';
 import CategoriesCard from '../components/CategoriesCard';
+import Nav from '../components/Nav';
 
 const CategoriesList = () => {
   const categories = useSelector(state => state.categories);
@@ -15,7 +16,6 @@ const CategoriesList = () => {
       .then(data => {
         //data.categories.splice(-2,2);
         dispatch(getCategories(data.categories));
-        localStorage.setItem('categories', JSON.stringify(data.categories));
       });
     } catch (e) {
       throw(e);
@@ -24,6 +24,8 @@ const CategoriesList = () => {
   
   if(categories.length > 0){
     return (
+      <>
+      <Nav />
       <div className='categoriesList'>
         {categories.map(
           category => <CategoriesCard 
@@ -31,6 +33,7 @@ const CategoriesList = () => {
           category={category} />
           )}
       </div>
+      </>
     )
   }
 

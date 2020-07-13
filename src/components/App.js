@@ -14,9 +14,6 @@ const App = ({store}) =>{
         <Route expect path='/category-meals/:categoryName'>
           <CategoryMeals />
         </Route>
-        <Route expect path='/meal-details/:mealId'>
-
-        </Route>
       </Router>
     </Provider> 
   )

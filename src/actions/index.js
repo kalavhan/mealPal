@@ -3,9 +3,7 @@ export const getCategories = (categories) => ({
   categories,
 });
 
-export const setCategoryMeals = (meals) => {
-  console.log(meals);
-  return ({
+export const setCategoryMeals = (meals) => ({
   type: 'SET_CATEGORY_MEALS',
   meals,
-})}
+});

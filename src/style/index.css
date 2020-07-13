@@ -31,7 +31,6 @@ body {
   color: #000;
   display: flex;
   cursor: pointer;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .categoriesList > .categoriesCard > h1{
@@ -52,7 +51,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 .categoriesCard > .categoriesCardImg > img {
@@ -119,7 +117,7 @@ body {
   flex-direction: row;
   position: relative;
   background-color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 19px;
 }
 
 .mealCard > img {
@@ -130,4 +128,43 @@ body {
 
 .mealCard > h3 {
   margin: 0;
+}
+
+nav {
+  height: 70px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+nav > button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: #000;
+  font-size: 28px;
+}
+
+.mealDetails > .mdImage {
+  width: 60%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.mealDetails > iframe {
+  min-width: 400px;
+  min-height: 200px;
+}
+
+.mealDetails > .mdTitleIngredients {
+  margin-bottom: 10px;
+}
+
+.layer-1 {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.layer-2 {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
