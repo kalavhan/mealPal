@@ -75,17 +75,29 @@ body {
 
 .mealDetails {
   flex: 1;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   margin: 10px;
   background-color: #fff;
   border-radius: 10px;
   padding: 10px;
+  position: relative;
+  align-items: center;
+}
+
+.mealDetails > h2 {
+  margin-bottom: 5px;
 }
 
 .mealDetails > h4 {
   color: rgb(54, 54, 54);
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+
+.mealDetails > img {
+  width: 80%;
+  height: auto;
 }
 
 .mealsList {
