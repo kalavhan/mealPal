@@ -1,6 +1,5 @@
-import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { getCategories } from '../actions/index';
 import Loader from '../components/loader';
 import CategoriesCard from '../components/CategoriesCard';
@@ -10,34 +9,32 @@ const CategoriesList = () => {
   const categories = useSelector(state => state.categories);
   const dispatch = useDispatch();
   useEffect(() => {
-    try {
-      fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+    fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
       .then(response => response.json())
       .then(data => {
-        //data.categories.splice(-2,2);
         dispatch(getCategories(data.categories));
       });
-    } catch (e) {
-      throw(e);
-    }
-  },[dispatch]);
-  
-  if(categories.length > 0){
+  }, [dispatch]);
+
+  if (categories.length > 0) {
     return (
       <>
-      <Nav />
-      <div className='categoriesList'>
-        {categories.map(
-          category => <CategoriesCard 
-          key={category.idCategory}  
-          category={category} />
+        <Nav />
+        <div className="categoriesList">
+          {categories.map(
+            category => (
+              <CategoriesCard
+                key={category.idCategory}
+                category={category}
+              />
+            ),
           )}
-      </div>
+        </div>
       </>
-    )
+    );
   }
 
   return <Loader />;
-}
+};
 
 export default CategoriesList;

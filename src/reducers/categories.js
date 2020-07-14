@@ -5,6 +5,6 @@ const categoriesReducer = (state = [], action) => {
     default:
       return state;
   }
-}
+};
 
 export default categoriesReducer;
