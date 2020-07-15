@@ -10,7 +10,7 @@ const CategoriesCard = ({ category }) => {
 
   return (
     <div className="categoriesCard" role="button" onClick={() => changeView(category.strCategory)} onKeyUp={() => {}} tabIndex={0}>
-      <h1>{category.strCategory}</h1>
+      <h1 data-testid={`${category.strCategory}`}>{category.strCategory}</h1>
       <div className="categoriesCardImg">
         <img src={category.strCategoryThumb} alt={`How to make ${category.strCategory} based meals`} />
       </div>
