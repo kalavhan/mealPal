@@ -33,7 +33,7 @@ body {
   cursor: pointer;
 }
 
-.categoriesList > .categoriesCard > h1{
+.categoriesList > .categoriesCard > h1 {
   font-size: 20px;
   width: 100%;
   text-align: center;
@@ -53,14 +53,24 @@ body {
   align-items: center;
 }
 
-.categoriesCard > .categoriesCardImg > img {
-  width: 100%;
+nav > img {
+  max-width: 60%;
+}
+
+.mealDetails > img {
+  width: 80%;
   height: auto;
 }
 
-.categoriesList > .categoriesCard > h1 {
-  position: absolute;
-  z-index: 3;
+.mealCard > img {
+  width: 20%;
+  min-width: 20%;
+  height: auto;
+}
+
+.categoriesCard > .categoriesCardImg > img {
+  width: 100%;
+  height: auto;
 }
 
 .categoriesList > .categoriesCard > h1:hover {
@@ -97,11 +107,6 @@ body {
   margin-bottom: 3px;
 }
 
-.mealDetails > img {
-  width: 80%;
-  height: auto;
-}
-
 .mealsList {
   flex-basis: 743px;
   flex-shrink: 2;
@@ -120,12 +125,6 @@ body {
   margin-bottom: 19px;
 }
 
-.mealCard > img {
-  width: 20%;
-  min-width: 20%;
-  height: auto;
-}
-
 .mealCard > h3 {
   margin: 0;
 }
@@ -137,9 +136,6 @@ nav {
   flex-direction: row;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-}
-nav > img {
-  max-width: 60%;
 }
 
 nav > button {
