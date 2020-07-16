@@ -5,8 +5,8 @@
 
 This project is a recipe book, Using MealDB API to get the meal categories, meals for each category and details for each meal.
 
-![Home](https://user-images.githubusercontent.com/47485749/87512142-ba553700-c633-11ea-96bc-dc8964e8d33f.png)
-![MealList](https://user-images.githubusercontent.com/47485749/87512183-cb9e4380-c633-11ea-8320-df51fd7b7179.png)
+![Home](https://user-images.githubusercontent.com/47485749/87677415-f45b3180-c736-11ea-9f9e-b739bf7255c2.png)
+![MealList](https://user-images.githubusercontent.com/47485749/87677462-06d56b00-c737-11ea-97b8-5c38c2272689.jpg)
 
 ## Built With
 - Javascript(ES6)
@@ -17,7 +17,7 @@ This project is a recipe book, Using MealDB API to get the meal categories, meal
 [Live link](https://mealpal-kalavhan.herokuapp.com/)
 
 ## Prerequisites
-- npm
+- node
 
 ## Functionalities 
 - List of categories for meals
