@@ -5,6 +5,7 @@
   "dependencies": {
     "@testing-library/react": "^10.4.6",
     "@testing-library/user-event": "^7.1.2",
+    "history": "^5.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -17,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom-fourteen",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
