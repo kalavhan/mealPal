@@ -86,15 +86,16 @@ nav > img {
   flex-basis: 557px;
   flex-shrink: 1;
   display: flex;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
   flex-direction: column;
-  margin: 10px;
   background-color: #fff;
   border-radius: 10px;
   padding: 10px;
   position: relative;
   align-items: center;
-  max-height: calc(100vh - 20px);
-  overflow-y: scroll;
 }
 
 .mealDetails > h2 {
@@ -108,13 +109,10 @@ nav > img {
 }
 
 .mealsList {
-  flex-basis: 743px;
-  flex-shrink: 2;
-  flex-direction: column;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  max-height: calc(100vh - 20px);
-  overflow-y: scroll;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 130px;
 }
 
 .mealCard {
@@ -123,6 +121,7 @@ nav > img {
   position: relative;
   background-color: #fff;
   margin-bottom: 19px;
+  cursor: pointer;
 }
 
 .mealCard > h3 {
@@ -152,8 +151,8 @@ nav > button {
 }
 
 .mealDetails > iframe {
-  min-width: 400px;
-  min-height: 200px;
+  min-width: 80%;
+  min-height: 400px;
 }
 
 .mealDetails > .mdTitleIngredients {

@@ -5,7 +5,7 @@ import './style/index.css';
 import App from './components/App';
 import rootReducer from './reducers';
 
-const store = createStore(rootReducer, { categories: [], meals: [] });
+const store = createStore(rootReducer, { categories: [], meals: [], mealDetails: 0 });
 
 ReactDOM.render(
   <App store={store} />,

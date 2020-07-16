@@ -1,16 +1,21 @@
 import React from 'react';
 import PropType from 'prop-types';
 
-const MealsCard = ({ meal, selectedMeal }) => (
-  <div className="mealCard layer-1" role="button" onClick={() => selectedMeal(`${meal.idMeal}`)} onKeyUp={() => {}} tabIndex={0}>
-    <img src={meal.strMealThumb} alt="mealImage" />
-    <h3>{meal.strMeal}</h3>
+const MealsCard = ({ meals, showMealDetails }) => (
+  <div className="mealsList">
+    <h1>List of meals</h1>
+    {meals.map(meal => (
+      <div className="mealCard layer-1" role="button" key={meal.idMeal} onClick={() => showMealDetails(meal.idMeal)} onKeyUp={() => {}} tabIndex={0}>
+        <img src={meal.strMealThumb} alt="mealImage" />
+        <h3>{meal.strMeal}</h3>
+      </div>
+    ))}
   </div>
 );
 
 MealsCard.propTypes = {
-  meal: PropType.objectOf(PropType.object).isRequired,
-  selectedMeal: PropType.func.isRequired,
+  meals: PropType.arrayOf(PropType.object).isRequired,
+  showMealDetails: PropType.func.isRequired,
 };
 
 export default MealsCard;

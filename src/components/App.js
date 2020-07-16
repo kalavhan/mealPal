@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PropType from 'prop-types';
 import CategoriesList from '../containers/CategoriesList';
-import CategoryMeals from '../containers/CategoryMeals';
+import MealDetails from '../containers/MealDetails';
 
 const App = ({ store }) => (
   <Provider store={store}>
@@ -11,8 +11,8 @@ const App = ({ store }) => (
       <Route exact path="/">
         <CategoriesList />
       </Route>
-      <Route expect path="/category-meals/:categoryName">
-        <CategoryMeals />
+      <Route expect path="/meal/:idMeal">
+        <MealDetails />
       </Route>
     </Router>
   </Provider>
